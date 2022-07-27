@@ -112,7 +112,7 @@ extern unsigned long empty_zero_page[1024];
  * newer 3-level PAE-mode page tables.
  */
 #ifndef __ASSEMBLY__
-#if CONFIG_X86_PAE
+#if CONFIG_X86_PAE //if CPU higher than pentium Pro and use 36bit address .则采用asm/pgtable-3level.h这个头文件，
 # include <asm/pgtable-3level.h>
 
 /*
@@ -120,7 +120,7 @@ extern unsigned long empty_zero_page[1024];
  */
 extern void pgtable_cache_init(void);
 
-#else
+#else// mainly talking about this pgtable-2level
 # include <asm/pgtable-2level.h>
 
 /*
