@@ -1,0 +1,2 @@
+对于Linux内核而言，编译的时候会把目录include/asm 符号连接到具体cpu专用的文件目录：意思是假如什么东西检测到这个是个i386 cpu，则进入/include/asm-i386这个i386 cpu的专用文件目录中，假如是x86_64的，则被链接到include/asm-x86_64去
+
