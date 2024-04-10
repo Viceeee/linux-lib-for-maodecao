@@ -409,12 +409,14 @@ struct thread_struct {
 #define start_thread(regs, new_eip, new_esp) do {		\
 	__asm__("movl %0,%%fs ; movl %0,%%gs": :"r" (0));	\
 	set_fs(USER_DS);					\
-	regs->xds = __USER_DS;					\
-	regs->xes = __USER_DS;					\
-	regs->xss = __USER_DS;					\
-	regs->xcs = __USER_CS;					\
-	regs->eip = new_eip;					\
-	regs->esp = new_esp;					\
+	regs->xds = __USER_DS; /*寄存器DS的映像*/\
+	regs->xes = __USER_DS; /*寄存器ES的映像*/\
+	regs->xss = __USER_DS; /*………………SS…………*/	 \
+	regs->xcs = __USER_CS; /*………………CS…………*/  \
+	/*本来应该ES存到ES中,SS存到SS中，Intel的意图是将一个进程的ELF分为代码段、数据段和堆栈段，但是linux却不叼他*/									 \
+	/*在linux内核中，堆栈段和数据段是不分的*/\
+	regs->eip = new_eip;					 \
+	regs->esp = new_esp;					 \
 } while (0)
 
 /* Forward declaration, a strange C thing */
