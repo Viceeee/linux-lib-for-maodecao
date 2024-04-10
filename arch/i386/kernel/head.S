@@ -431,6 +431,8 @@ ENTRY(gdt_table)
 	.quad 0x00cff2000000ffff	/* 0x2b user   4GB data at 0x00000000 */
 	.quad 0x0000000000000000	/* not used */
 	.quad 0x0000000000000000	/* not used */
+	//GDT的第一项(下标位0)和第二项是不用的，这是为了防止加电后段寄存器未经初始化就进入保护模式并使用GDT，Intel的规定
+	//下标2-5对应4种段寄存器格式(源为include/asm-i386/segement.h)
 	/*
 	 * The APM segments have byte granularity and their bases
 	 * and limits are set at run time.
