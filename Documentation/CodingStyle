@@ -29,7 +29,7 @@ Now, some people will claim that having 8-character indentations makes
 the code move too far to the right, and makes it hard to read on a
 80-character terminal screen.  The answer to that is that if you need
 more than 3 levels of indentation, you're screwed anyway, and should fix
-your program.
+your program.//大佬的牛逼，代码的简洁
 
 In short, 8-char indents make things easier to read, and have the added
 benefit of warning you when you're nesting your functions too deep.
@@ -38,7 +38,7 @@ Heed that warning.
 Don't put multiple statements on a single line unless you have
 something to hide:
 
-	if (condition) do_this;
+	if (condition) do_this;// Never do thing like this unless? fuck unless!
 	  do_something_everytime;
 
 Outside of comments, documentation and except in [cC]onfig.in, spaces are never
@@ -160,7 +160,7 @@ See next chapter.
 Functions should be short and sweet, and do just one thing.  They should
 fit on one or two screenfuls of text (the ISO/ANSI screen size is 80x24,
 as we all know), and do one thing and do that well.
-
+//do one thing and do that well in one function !!!
 The maximum length of a function is inversely proportional to the
 complexity and indentation level of that function.  So, if you have a
 conceptually simple function that is just one long (but simple)
@@ -192,6 +192,8 @@ The goto statement comes in handy when a function exits from multiple
 locations and some common work such as cleanup has to be done.
 
 The rationale is:
+: )
+; )
 
 - unconditional statements are easier to understand and follow
 - nesting is reduced
@@ -304,7 +306,9 @@ Generally, CONFIG_EXPERIMENTAL should surround all options not considered
 stable. All options that are known to trash data (experimental write-
 support for file-systems, for instance) should be denoted (DANGEROUS), other
 Experimental options should be denoted (EXPERIMENTAL).
-
+//read here next time! bye!
+//its 2024/04/12 0:58 now and i m still reading here and i love this!
+//i m stil video chatting with my girl friend Carrie
 
 		Chapter 10: Data structures
 
